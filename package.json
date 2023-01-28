@@ -1,26 +1,49 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
-  "private": true,
+  "name": "hexo-deployer-git",
+  "version": "3.0.0",
+  "description": "Git deployer plugin of Hexo.",
+  "main": "index.js",
   "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "deploy": "hexo deploy",
-    "server": "hexo server"
+    "eslint": "eslint .",
+    "test": "mocha test/index.js",
+    "test-cov": "c8 --reporter=lcovonly npm run test"
   },
-  "hexo": {
-    "version": "6.3.0"
+  "directories": {
+    "lib": "./lib"
+  },
+  "files": [
+    "lib/",
+    "index.js"
+  ],
+  "repository": "hexojs/hexo-deployer-git",
+  "homepage": "https://hexo.io/",
+  "keywords": [
+    "hexo",
+    "git",
+    "deploy",
+    "deployer"
+  ],
+  "author": "Tommy Chen <tommy351@gmail.com> (https://zespia.tw)",
+  "maintainers": [
+    "Abner Chou <hi@abnerchou.me> (https://abnerchou.me)"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "c8": "^7.12.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.24.0",
+    "eslint-config-hexo": "^5.0.0",
+    "mocha": "^10.0.0"
   },
   "dependencies": {
-    "hexo": "^6.3.0",
-    "hexo-generator-archive": "^2.0.0",
-    "hexo-generator-category": "^2.0.0",
-    "hexo-generator-index": "^3.0.0",
-    "hexo-generator-tag": "^2.0.0",
-    "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-marked": "^6.0.0",
-    "hexo-renderer-stylus": "^2.1.0",
-    "hexo-server": "^3.0.0",
-    "hexo-theme-landscape": "^0.0.3"
+    "bluebird": "^3.7.2",
+    "hexo-fs": "^4.0.0",
+    "hexo-util": "^2.7.0",
+    "luxon": "^3.0.4",
+    "nunjucks": "^3.2.3",
+    "picocolors": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
