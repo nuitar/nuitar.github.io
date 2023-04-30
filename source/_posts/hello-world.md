@@ -1,6 +1,6 @@
 ---
 title: Hello World
-password: 1234abb
+password: 1234
 abstract: 有东西被加密了, 请输入密码查看
 message: 您好, 这里需要密码.
 wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
