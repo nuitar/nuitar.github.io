@@ -26,7 +26,7 @@
 <meta property="og:description" content="Python的一些错题笔记">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-05-04T06:40:53.000Z">
-<meta property="article:modified_time" content="2023-05-04T09:44:13.676Z">
+<meta property="article:modified_time" content="2023-05-15T06:15:37.841Z">
 <meta property="article:author" content="nuitar">
 <meta property="article:tag" content="note">
 <meta property="article:tag" content="Python">
@@ -374,8 +374,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-05-04 17:44:13</span>
-            <span class="mobile">2023-05-04 17:44</span>
+            <span class="desktop">2023-05-15 14:15:37</span>
+            <span class="mobile">2023-05-15 14:15</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -422,17 +422,107 @@
 
             <div class="article-content markdown-body">
                 <h3 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h3><ul>
-<li>numpy中索引得到的数据是引用数据，需使用 <code>ndarray.copy()</code>，避免引用数据乱飞，导致错误</li>
-<li>1</li>
+<li><p>numpy中索引得到的数据是引用数据，需使用 <code>ndarray.copy()</code>，避免引用数据乱飞，导致错误，做运算时得到的结果不是原来数据的引用。例如：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(<span class="number">10</span>)</span><br><span class="line">c = a[:]*<span class="number">1</span> <span class="comment"># 此时c的数据并不是a的引用</span></span><br></pre></td></tr></table></figure></div></li>
+<li><p>1</p>
+</li>
 </ul>
 <hr>
 <h3 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h3><ul>
-<li><p>在使用pytorch训练单通道图片的过程中，如果想要调用torchvision中已有的网络，需要把卷积层第一层的input_channels 改掉。</p>
-<p>例如：</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = models.resnet18()</span><br><span class="line">model.conv1 = nn.Conv2d(<span class="number">1</span>, <span class="number">64</span>, kernel_size=<span class="number">7</span>, stride= <span class="number">2</span>, padding=<span class="number">3</span>, bias= <span class="literal">False</span>)</span><br></pre></td></tr></table></figure></div></li>
+<li><p>在使用pytorch训练单通道图片的过程中，如果想要调用torchvision中已有的网络，需要把卷积层第一层的input_channels 改掉。例如：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = models.resnet18()</span><br><span class="line">model.conv1 = nn.Conv2d(<span class="number">1</span>, <span class="number">64</span>, kernel_size=<span class="number">7</span>, stride= <span class="number">2</span>, padding=<span class="number">3</span>, bias= <span class="literal">False</span>)</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>矩阵相乘有torch.mm和torch.matmul两个函数。其中前一个是针对二维矩阵，后一个是高维。当torch.mm用于大于二维时将报错。</p>
+</li>
+<li><p><code>Tensor.detach()</code></p>
+<p>Returns a new Tensor, detached from the current graph.</p>
+<p>The result will never require gradient.</p>
+<p>This method also affects forward mode AD gradients and the result will never have forward mode AD gradients.</p>
+</li>
 </ul>
 <hr>
 <h3 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h3><hr>
+<h3 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h3><ul>
+<li><p><code>pandas.get_dummies()</code>对变量使用独热向量编码 注意陷阱：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43404784/article/details/89486442" >pandas.get_dummies （独热编码）详解 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>    &#96;&#96;&#96;</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 已知四个季节的情况下下述例子无法正确输出，因为categries类型里面只有两个</span></span><br><span class="line">data_1 = pd.DataFrame(&#123;<span class="string">&#x27;x&#x27;</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],<span class="string">&#x27;季节&#x27;</span>:[<span class="string">&#x27;春&#x27;</span>,<span class="string">&#x27;春&#x27;</span>,<span class="string">&#x27;夏&#x27;</span>,<span class="string">&#x27;夏&#x27;</span>]&#125;)</span><br><span class="line">pd.get_dummies(data_1,dummy_na=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>x</th>
+<th>季节_夏</th>
+<th>季节_春</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.get_dummies(data_1[<span class="string">&#x27;季节&#x27;</span>].astype(pd.CategoricalDtype([<span class="string">&quot;春&quot;</span>, <span class="string">&quot;夏&quot;</span>, <span class="string">&quot;秋&quot;</span>, <span class="string">&quot;冬&quot;</span>])))</span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>春</th>
+<th>夏</th>
+<th>秋</th>
+<th>冬</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
 
             </div>
 
@@ -445,7 +535,7 @@
         <li><strong>Created at:</strong> 2023-05-04 14:40:53</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-05-04 17:44:13
+                <strong>Updated at:</strong> 2023-05-15 14:15:37
             </li>
         
         <li>
@@ -523,7 +613,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Python note</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy"><span class="nav-text">numpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch"><span class="nav-text">pytorch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matplotlib"><span class="nav-text">matplotlib</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy"><span class="nav-text">numpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch"><span class="nav-text">pytorch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matplotlib"><span class="nav-text">matplotlib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pandas"><span class="nav-text">pandas</span></a></li></ol>
 
     </div>
 </div>
