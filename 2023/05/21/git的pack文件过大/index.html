@@ -13,16 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://nuitar.com/archives/2023/"/>
+    <link rel="canonical" href="http://nuitar.com/2023/05/21/git的pack文件过大/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
-<meta property="og:title" content="nuitar-blog">
-<meta property="og:url" content="http://nuitar.com/archives/2023/index.html">
+        <meta name="description" content="Git项目过大清理（针对大文件） - Geoffrey_one - 博客园  先存着，以后再写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git的pack文件过大">
+<meta property="og:url" content="http://nuitar.com/2023/05/21/git%E7%9A%84pack%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7/index.html">
 <meta property="og:site_name" content="nuitar-blog">
+<meta property="og:description" content="Git项目过大清理（针对大文件） - Geoffrey_one - 博客园  先存着，以后再写">
 <meta property="og:locale">
+<meta property="article:published_time" content="2023-05-21T09:52:55.000Z">
+<meta property="article:modified_time" content="2023-05-21T09:53:24.408Z">
 <meta property="article:author" content="nuitar">
 <meta name="twitter:card" content="summary">
     
@@ -36,7 +40,7 @@
     
     <title>
         
-            Archive: 2023 -
+            git的pack文件过大 -
         
         nuitar&#39;s Blog
     </title>
@@ -138,7 +142,7 @@
                         
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active" 
+                                <a class="" 
                                     href="/archives"  >
                                     
                                         
@@ -250,7 +254,7 @@
             
                 
                     <li class="drawer-navbar-item flex-center">
-                        <a class="active" 
+                        <a class="" 
                         href="/archives"  >
                              
                                 
@@ -336,78 +340,134 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
-        
-<div class="archive-list-container">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">git的pack文件过大</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">nuitar</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-05-21 17:52:55</span>
+        <span class="mobile">2023-05-21 17:52</span>
+        <span class="hover-info">Created</span>
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[9]</span>
-            </div>
-            <ul class="article-list">
-              
-              <li class="article-item" date-is='05-21'>
-                <a href="/2023/05/21/git%E7%9A%84pack%E6%96%87%E4%BB%B6%E8%BF%87%E5%A4%A7/">
-                  <span class="article-title">git的pack文件过大</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='05-19'>
-                <a href="/2023/05/19/%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8/">
-                  <span class="article-title">经常使用</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='05-11'>
-                <a href="/2023/05/11/Robomaster-thought/">
-                  <span class="article-title">Robomaster thought</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='05-11'>
-                <a href="/2023/05/11/%E4%BD%BF%E7%94%A8warp%EF%BC%8C%E5%B9%B6%E5%AE%9E%E7%8E%B0xray%E5%88%86%E6%B5%81/">
-                  <span class="article-title">使用warp，并实现xray分流</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='05-04'>
-                <a href="/2023/05/04/Cpp-note/">
-                  <span class="article-title">Cpp note</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='05-04'>
-                <a href="/2023/05/04/Python-note/">
-                  <span class="article-title">Python note</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='05-04'>
-                <a href="/2023/05/04/hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
-                  <span class="article-title">Hexo使用指南</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='04-30'>
-                <a href="/2023/04/30/Hello/">
-                  <span class="article-title">Hello</span>
-                </a>
-              </li>
-              
-              <li class="article-item" date-is='04-30'>
-                <a href="/2023/04/30/hello-world/">
-                  <span class="article-title">Hello World</span>
-                </a>
-              </li>
-              
-            </ul>
-        </section>
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-05-21 17:53:24</span>
+            <span class="mobile">2023-05-21 17:53</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
     
 </div>
 
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/geoffreyone/p/14603537.html" >Git项目过大清理（针对大文件） - Geoffrey_one - 博客园 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>先存着，以后再写</p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> git的pack文件过大</li>
+        <li><strong>Author:</strong> nuitar</li>
+        <li><strong>Created at:</strong> 2023-05-21 17:52:55</li>
+        
+            <li>
+                <strong>Updated at:</strong> 2023-05-21 17:53:24
+            </li>
+        
+        <li>
+            <strong>Link:</strong> http://www.nuitarl.top/2023/05/21/git的pack文件过大/
+        </li>
+        <li>
+            <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/05/19/%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">经常使用</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">git的pack文件过大</div>
+        
+
     </div>
 </div>
+            </div>
+        
+    </div>
+</div>
+
 
                 
 
@@ -469,6 +529,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
@@ -580,6 +657,16 @@
 
 
 <div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
     
 </div>
 
