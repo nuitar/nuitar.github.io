@@ -1,6 +1,5 @@
 body {
   background-image: url("../img/海报(小).png");
-  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -11,12 +10,10 @@ body {
 }
 
 .welcome_title {
-  font-size: 12em;
   text-align: center;
   color: white;
   text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 15px #000000,
     0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000;
-  padding: 50px 0;
   /* background: -webkit-linear-gradient(top, red, yellow); */
   font-family: "MyFont", sans-serif;
 }
