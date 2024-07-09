@@ -30,3 +30,14 @@ ul.md-tabs__list {
 .md-sidebar.md-sidebar--secondary {
   display: none !important;
 }
+
+.md-sidebar.md-sidebar--primary{
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  /* 在这里写你想要改变的样式 */
+  .md-sidebar.md-sidebar--primary{
+    display: flex;
+  }
+}

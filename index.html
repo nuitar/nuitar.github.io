@@ -403,11 +403,11 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorial/22%E7%BA%A7/%E6%9C%BA%E6%A2%B0%E7%BB%84/" class="md-nav__link">
+      <a href="tutorial/22%E7%BA%A7/%E7%AE%97%E6%B3%95%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    机械组
+    算法组
   </span>
   
 
@@ -616,55 +616,55 @@
 
 <script>
 
-// 创建一个观察器实例
-var observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-        // 检查style属性是否发生变化
-        if (mutation.attributeName === 'style') {
-            var element = mutation.target;
-            var style = window.getComputedStyle(element);
-            // 检查元素的top属性
-            if (style.getPropertyValue("top") === "48px") {
-                // 断开观察
-                observer.disconnect();
-                // 改变元素样式
-                element.style.cssText = "display: none !important;Top: 48px";
-                console.log("success!");
-                // 重新开始观察
-                observer.observe(element, { attributes: true, attributeFilter: ['style'] });
-            }
-            else{
-              // 断开观察
-                observer.disconnect();
-                // 改变元素样式
-                element.style.cssText = "display: inline !important;"
-                console.log("success!");
-                // 重新开始观察
-                observer.observe(element, { attributes: true, attributeFilter: ['style'] });
-              // console.log("非48px!");
-            }
-        }
-    });
-});
+// // 创建一个观察器实例
+// var observer = new MutationObserver(function(mutations) {
+//     mutations.forEach(function(mutation) {
+//         // 检查style属性是否发生变化
+//         if (mutation.attributeName === 'style') {
+//             var element = mutation.target;
+//             var style = window.getComputedStyle(element);
+//             // 检查元素的top属性
+//             if (style.getPropertyValue("top") === "48px") {
+//                 // 断开观察
+//                 observer.disconnect();
+//                 // 改变元素样式
+//                 element.style.cssText = "display: none !important;Top: 48px";
+//                 console.log("success!");
+//                 // 重新开始观察
+//                 observer.observe(element, { attributes: true, attributeFilter: ['style'] });
+//             }
+//             else{
+//               // 断开观察
+//                 observer.disconnect();
+//                 // 改变元素样式
+//                 element.style.cssText = "display: inline !important;"
+//                 console.log("success!");
+//                 // 重新开始观察
+//                 observer.observe(element, { attributes: true, attributeFilter: ['style'] });
+//               // console.log("非48px!");
+//             }
+//         }
+//     });
+// });
 
-// 获取元素
-var elements = document.getElementsByClassName("md-sidebar md-sidebar--primary");
+// // 获取元素
+// var elements = document.getElementsByClassName("md-sidebar md-sidebar--primary");
 
-// 检查是否找到了元素
-if (elements.length > 0) {
-    // 对每个匹配的元素进行操作
-    for (var i = 0; i < elements.length; i++) {
-        var element = elements[i];
+// // 检查是否找到了元素
+// if (elements.length > 0) {
+//     // 对每个匹配的元素进行操作
+//     for (var i = 0; i < elements.length; i++) {
+//         var element = elements[i];
 
-        // 配置观察器：观察目标节点的style属性
-        var config = { attributes: true, attributeFilter: ['style'] };
+//         // 配置观察器：观察目标节点的style属性
+//         var config = { attributes: true, attributeFilter: ['style'] };
 
-        // 传入目标节点和观察选项
-        observer.observe(element, config);
-    }
-} else {
-    console.log("Element not found");
-}
+//         // 传入目标节点和观察选项
+//         observer.observe(element, config);
+//     }
+// } else {
+//     console.log("Element not found");
+// }
 
 
 </script>
