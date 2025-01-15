@@ -707,13 +707,15 @@
 <style>
 
 .md-sidebar.md-sidebar--primary{
-  display: none;
+  display: flex;
 }
 
 @media (max-width: 1200px) {
   /* 在这里写你想要改变的样式 */
   .md-sidebar.md-sidebar--primary{
-    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; 
   }
 }
 </style>
