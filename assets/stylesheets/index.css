@@ -12,8 +12,8 @@ body {
 .welcome_title {
   text-align: center;
   color: white;
-  text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 15px #000000,
-    0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000;
+  text-shadow: 0 0 5px #f61414, 0 0 10px #c11717, 0 0 15px #e31a1a,
+    0 0 20px #aa1010, 0 0 30px #bc1818, 0 0 40px #c71818;
   /* background: -webkit-linear-gradient(top, red, yellow); */
   font-family: "MyFont", sans-serif;
 }
